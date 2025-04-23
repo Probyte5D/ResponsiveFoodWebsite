@@ -1,0 +1,1387 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+/*common styles*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Montserrat", "Comfortaa";
+  font-weight: 400;
+}
+
+/* Aggiungiamo il footer al fondo della pagina */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+
+html{
+  font-size: 62.5%;
+}
+/*end of common styles*/
+
+/*section1*/
+.section-1 {
+  width: 100%;
+  height: 80vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.575)), /* Fading effect */
+    url('Images/immagine4.png'); /* Iniziale immagine di sfondo */
+
+    background-size: cover;
+    background-repeat: no-repeat; /* 👈 Aggiunto per evitare ripetizioni */
+    background-position: center;
+    background-attachment: fixed;
+  
+  color: white;
+  padding: 2rem;
+  border: 10px solid white;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: background-image 0.5s ease-in-out; /* Transizione dell'immagine di sfondo */
+  
+}
+
+.section-heading {
+  font-size: 12rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+  font-family: 'Playfair Display', serif;
+
+}
+
+/* Gestione delle parole che cambiano */
+.section-1-Text {
+  display: flex;
+
+  justify-content: space-evenly; /* Le parole saranno distribuite uniformemente */
+  align-items: center;
+  height: 4rem;
+  position: relative;
+}
+
+.section-1-Text .text-item {
+  font-size: 3rem;
+  color: #9e6f09c5;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0); /* Inizia nascosto */
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: transform 0.3s, opacity 0.3s;
+  justify-content: center;
+  opacity: 0; /* Inizia invisibile */
+}
+
+/* Quando la classe 'change' è aggiunta */
+.section-1-Text .text-item.change {
+  opacity: 1; /* La parola diventa visibile */
+  transform: scale(1); /* La parola diventa grande */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Aggiunta transizione */
+  font-size: 4rem; /* Per aumentare la dimensione della parola */
+  justify-content: center;
+}
+/*end of sect1*/
+
+
+/*sect2*/
+/* Section 2 */
+.section-2 {
+  width: 100%;
+  height: 100vw;
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.575)), /* Fading effect */
+    url('Images/restaurant-background.png'); /* L'immagine di sfondo */
+    background-position: left;
+    background-size: 50% 100%;
+    background-position: left center; /* Posiziona l'immagine a sinistra, al centro verticalmente */
+    background-attachment: scroll; /* o semplicemente toglilo */
+
+    background-repeat: no-repeat; /* Non ripetere l'immagine */
+ 
+    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 0;
+  margin-top: 20px;
+
+}
+
+
+/* Contenitore principale per affiancare card e testo */
+.cards-container {
+  display: flex; /* Flexbox per disporre i div in orizzontale */
+  justify-content: space-between; /* Spaziatura tra la card e il div di testo */
+  align-items: center;
+  width: 80%; /* Impostiamo una larghezza per il contenitore */
+  gap: 2rem; /* Spaziatura tra la card e il div del testo */
+  flex-wrap: wrap; /* Permette di avere più righe */
+
+}
+
+/* Su dispositivi con larghezza massima di 768px (dispositivi mobili), effetto glass */
+@media (max-width: 768px) {
+  .section-2 {
+    background-color: rgba(235, 235, 191, 0.7); /* Colore di sfondo semi-trasparente */
+    backdrop-filter: blur(10px); /* Aggiunge l'effetto di sfocatura sullo sfondo */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilità con Safari */
+    background-image: none; /* Rimuove l'immagine di sfondo su dispositivi mobili */
+  }
+}
+
+/* Su dispositivi con larghezza maggiore di 768px (tablet e desktop), mostra l'immagine di sfondo */
+@media (min-width: 769px) {
+  .section-2 {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.575)), /* Effetto di dissolvenza */
+      url('Images/restaurant-background.png'); /* L'immagine di sfondo */
+  }
+}
+
+
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(253, 214, 106, 0.8); /* Colore di sfondo della card */
+  padding: 2rem;
+  width: 45%; /* La card occupa metà dello spazio disponibile */
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+ 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Immagine della card */
+.card-img {
+  width: 100%;
+  height: 200px; /* Impostiamo un'altezza fissa per l'immagine */
+  object-fit: cover; /* L'immagine coprirà l'area senza distorsioni */
+}
+
+/* Descrizione della card */
+.card-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111;
+
+  margin-top: 20px;
+}
+
+/* Secondo div (testo) a destra della card */
+.card-name-right {
+
+  display: flex;
+  flex-direction: column; /* Manteniamo gli elementi in colonna */
+  background-color: white; /* Sfondo bianco per il testo */
+  padding: 2rem;
+  width: 45%; /* La larghezza è metà della sezione */
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden; /* Nasconde qualsiasi testo che esce dal contenitore */
+}
+
+/* Titolo nel div di testo a destra */
+.card-name-right h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111;
+  position: relative;
+
+}
+
+/* Descrizione nel div di testo a destra */
+.card-name-right p {
+  font-size: 1.8rem;
+  color: #313127;
+  margin-top: 1rem;
+}
+
+/* Prezzo nel div di testo a destra */
+.card-name-right span {
+  font-size: 2rem;
+  color: #070706;
+  margin-top: 1rem;
+}
+
+/* Bottone nel div di testo a destra */
+.card-name-right button {
+  background-color: #000;
+  color: antiquewhite;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column; /* Testo disposto in colonna */
+  justify-content: flex-start; /* Allinea il testo in alto */
+
+  padding: 2rem;
+  width: 45%; /* Il testo occupa il 45% della larghezza */
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+
+/* Sezione per invertire l'ordine in alcune card (ad esempio Carne e Dessert) */
+.card.reverse {
+  flex-direction: row-reverse; /* Immagine a destra, descrizione a sinistra */
+}
+
+/* Card a destra */
+.card-name-right {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  font-size: 3rem;
+  width: 48%; /* La larghezza è metà della sezione */
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+/* Titolo della sezione */
+.right-side h3 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 1rem;
+  text-align: left; /* Allinea il titolo a sinistra */
+  text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+  letter-spacing: 0.2rem;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.2); /* Aggiungi un leggero effetto ombra */
+}
+
+/* Descrizione del piatto */
+.right-side p {
+  font-size: 3rem;
+  font-style: italic;
+  color: #313127;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-family: 'Georgia', serif; /* Font elegante per il paragrafo */
+  letter-spacing: 0.1rem;
+  padding: 0 0.5rem;
+}
+
+/* Prezzo del piatto */
+.right-side span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #070706;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* Bottone per la prenotazione */
+.right-side button {
+  background-color: #000;
+  color: antiquewhite;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.right-side button:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/*sect3*/
+
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    padding: 5rem 2rem;
+    background: linear-gradient(to bottom, #fff, #f5f5f5);
+  }
+  /* Aggiungiamo un'animazione interessante per l'overlay */
+.gallery-link {
+  position: relative;
+  margin: 3rem 1rem;
+  width: 24vw;
+  height: 15vw;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery-link:hover {
+  transform: scale(1.03);
+  box-shadow: 0 2rem 4rem rgba(255, 94, 0, 0.4), 
+              0 1.5rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease;
+}
+
+.gallery-link:hover .food-img {
+  filter: brightness(60%) blur(1px);
+}
+
+/* Overlay */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 50%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-link:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Testo sopra immagine con colori neon */
+.food-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px #ff0055, 0 0 12px #ff0055; /* Default color */
+}
+
+.food-name.pasta {
+  text-shadow: 0 0 8px #ff007f, 0 0 12px #ff007f; /* Neon rosa */
+}
+
+.food-name.pesce {
+  text-shadow: 0 0 8px #00f7ff, 0 0 12px #00f7ff; /* Neon blu acqua */
+}
+
+.food-name.aperitivi {
+  text-shadow: 0 0 8px #ffeb3b, 0 0 12px #ffeb3b; /* Neon giallo */
+}
+
+.food-name.pizza {
+  text-shadow: 0 0 8px #ff5722, 0 0 12px #ff5722; /* Neon arancio */
+}
+
+.food-name.colazione {
+  text-shadow: 0 0 8px #ffeb3b, 0 0 12px #ffeb3b; /* Neon giallo */
+}
+
+.food-name.carne {
+  text-shadow: 0 0 8px #4caf50, 0 0 12px #4caf50; /* Neon verde */
+}
+
+.food-description {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #eee;
+  text-shadow: 0 0 5px #00ffe7, 0 0 10px #00ffe7;
+}
+
+/*sect4*/
+
+/* Section 4 - Footer */
+.section-4 {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 20px; /* Maggiore spazio sopra */
+  text-align: center;
+  margin-bottom: 60px; /* Aggiungiamo un margine per spostarlo più in basso */
+  align-items: center; /* Assicura che gli elementi siano centrati */
+  justify-items: auto;
+  position: relative;
+  display: flex;
+  min-height: 300px; /* oppure auto se preferisci adattabilità */
+  gap: 30px; /* Distanza uniforme tra blocchi */
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .section-4 {
+    padding: 40px 20px;
+    gap: 20px;
+    min-height: auto; /* si adatta meglio su mobile */
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .signup-form {
+    flex-direction: column;
+  }
+
+  .services-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .footer-socials {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+.section-4-text h2 {
+  margin-bottom: 10px;
+}
+
+.signup-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.signup-form-input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.signup-form-btn {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.services {
+  margin-top: 20px;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service {
+  text-align: center;
+  justify-content: center;
+}
+
+.service i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.service p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  margin-top: 40px; /* Spostiamo il footer più lontano */
+  
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-4 {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signup-form {
+    flex-direction: column;
+  }
+
+  .signup-form-input,
+  .signup-form-btn {
+    width: 100%;
+    border-radius: 4px;
+    margin: 5px 0;
+  }
+}
+/*end of sect4*/
+/*nav*/
+
+/* NAVBAR HIDDEN STATE (inizialmente nascosta) */
+.navbar {
+  position: fixed;
+
+  left: 0;
+  width: 100%;
+  height: 14rem;
+  background-color: rgba(44, 42, 42, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 9999;  /* più alto di tutto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+    transition: top 0.3s ease;
+    top: 0;
+ 
+    opacity: 1;
+    pointer-events: all;
+    transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  box-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: top 0.5s ease-in-out;
+}
+
+
+
+.navbar.hidden {
+  top: -120px;
+  opacity: 0;
+  pointer-events: none;
+          /* Nasconde tutto completamente */
+  transform: translateY(-100%); /* La navbar esce completamente verso l'alto */
+  opacity: 0;                   /* La navbar diventa completamente invisibile */
+  visibility: hidden;           /* Nasconde la navbar completamente */
+  pointer-events: none;  
+}
+
+/* NAVBAR VISIBLE STATE */
+.navbar.active {
+  top: 0;
+}
+
+.navbar .nav-content {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.nav-content {
+  opacity: 0;
+}
+/* NAV LINKS */
+.navbar-link {
+  color: #999986;
+  margin: 1rem;
+  font-weight: 900;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #ffcc00;
+}
+
+/* OPTIONAL - SPAN PICCOLO SOTTO OGNI LINK */
+.navbar-link span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  margin-top: 0.5rem;
+  color: #ccc;
+}
+
+
+
+
+/*end of nav*/
+
+
+@media (max-width:1400px) {
+  html{
+    font-size: 50%;
+  }
+  
+  .section-2{
+    height: auto;
+    padding: 10rem 0 12rem 0;
+  }
+  .cards{
+    margin-top: 10rem;
+  }
+
+  .gallery-link{
+    width: 40rem;
+    height: 25rem;
+    margin: 5rem;
+  }
+
+  .food-img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .section-4{
+    height: auto;
+    padding: 10rem 0 12rem 0;
+  }
+  .services{
+    width: 40rem;
+    height: 25rem;
+    margin: 5rem;
+  }
+  .section-4-text{
+    height: auto;
+    padding: 10rem 10rem 12rem 10rem;
+  }
+
+  .footer-socials {
+    display: flex;                 /* Using flexbox for icon arrangement */
+    justify-content: center;       /* Center icons horizontally */
+    align-items: center;           /* Center icons vertically */
+    gap: 1rem;                     /* Add spacing between icons */
+    padding: 2rem 0;               /* Vertical padding for footer */
+  }
+  
+  .footer-socials .social-icon {
+    font-size: 2.5rem;              /* Adjust icon size */
+    color: #333;                   /* Default icon color */
+    transition: color 0.3s ease;    /* Smooth hover transition */
+  }
+  
+  .footer-socials .social-icon:hover {
+    color: #1d72b8;                /* Change color on hover */
+  }
+  
+  .footer-socials .social-icon:active {
+    transform: scale(1.1);          /* Slight scaling effect on click */
+  }
+  
+  .footer-socials i {
+    display: flex;
+    align-items: center;           /* Center icons vertically within their container */
+    justify-content: center;       /* Center icons horizontally */
+    font-size: 2rem;
+  }
+  
+
+}
+@media (max-width: 1000px) {
+ 
+
+  .section-heading{
+    font-size: 9rem;
+    margin:0.5rem;
+  }
+
+  .section-1-Icons{
+    font-size: 25rem;
+  }
+  .cards-container{
+    flex-wrap: wrap;
+  }
+  .cards{
+    margin: 5rem;
+  }
+
+  .section-4 {
+    padding: 5rem 2rem;
+  }
+
+  /* Sezione "Registrati" */
+  .section-4-text {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .signup-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .signup-form-input {
+    width: 80%;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+
+  .signup-form-btn {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+  }
+
+  /* Sezione Servizi */
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    margin-bottom: 0;
+  }
+
+  .service {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .service i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .service h3 {
+    margin-bottom: 1rem;
+  }
+
+  /* Social Icons */
+  .footer-socials {
+    display: flex;
+    width: 1rem;
+    margin-top: 2rem;
+  margin-right: 2rem ;
+  }
+
+  .footer-socials .social-icon {
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding-right: 1rem;
+    width: 0.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap
+  }
+
+  /* Copyright */
+  .copyright {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+
+
+
+.changing-text {
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  height: 40px; /* Altezza fissa per mantenere lo spazio */
+  overflow: hidden;
+  width: auto;
+}
+
+.changing-text .word {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  animation: changeWord 6s infinite;
+}
+
+.changing-text .word:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.changing-text .word:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.changing-text .word:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes changeWord {
+  0%, 100% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+}
+
+
+/* Sezione 1 - Titolo */
+.section-heading {
+  font-size: 12rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+  position: relative;
+}
+
+/* Sezione 1 - Testo che cambia */
+.changing-text {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  overflow: hidden;
+  height: 4rem; /* Altezza per gestire lo spazio */
+}
+
+.changing-text .word {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0); /* Inizialmente nascosto e rimpicciolito */
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.changing-text .word.change {
+  opacity: 1;
+  transform: scale(1); /* Quando diventa visibile */
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Animazioni per i cambiamenti di parola */
+@keyframes changeWord {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  66% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.restaurant-intro {
+  
+    font-size: 3rem;
+    color: #fffbea;
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    
+    max-width: 90%;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(50,50,50,0.4));
+    border-left: 8px solid #ffbe33;
+    border-right: 8px solid #ffbe33;
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.5);
+    animation: fadeInUp 1.5s ease-out;
+    backdrop-filter: blur(5px); /* Effetto vetro */
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1800px) and (min-width: 1400px) {
+  /* Section 2 adjustments */
+  .section-2 {
+    height: auto;
+    padding: 8rem 0 10rem 0; /* Adjust padding for better spacing */
+  }
+
+  /* Container for cards */
+  .cards-container {
+    flex-direction: row; /* Keep them in row format */
+    justify-content: space-between; /* Spread the cards evenly */
+    gap: 3rem; /* Add more space between the cards */
+    width: 85%; /* Slightly reduced width for better fit */
+  }
+
+  /* Adjust individual cards */
+  .card {
+    width: 45%; /* Cards take up 45% of the available space */
+    padding: 2rem;
+    transition: transform 0.3s ease-in-out; /* Smooth hover transition */
+  }
+
+  /* Image size adjustment in cards */
+  .card-img {
+    width: 100%;
+    height: 250px; /* Adjust the height to fit better */
+  }
+
+  .card-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  /* Adjust the description and price */
+  .card-name-right p {
+    font-size: 1.6rem; /* Adjust for readability */
+  }
+
+  .card-name-right span {
+    font-size: 1.8rem; /* Adjust price font size */
+  }
+
+  /* Adjust button styling */
+  .card-name-right button {
+    font-size: 1.4rem; /* Adjust button text size */
+    padding: 0.6rem 1rem; /* Increase button padding */
+  }
+
+  /* Right side adjustments */
+  .right-side {
+    width: 48%; /* Slightly reduced width */
+    padding: 2rem;
+  }
+
+  /* Title in right side section */
+  .right-side h3 {
+    font-size: 3.5rem; /* Adjust heading size */
+  }
+
+  /* Adjust descriptions and price */
+  .right-side p {
+    font-size: 2.5rem;
+  }
+
+  .right-side span {
+    font-size: 2.2rem; /* Adjust price font size */
+  }
+
+  /* Adjust button in right side */
+  .right-side button {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+  }
+}
+
+
+/* Media query per dispositivi con larghezza tra 1400px e 1800px */
+@media (max-width: 1800px) and (min-width: 1400px) {
+  /* Sezione 2: adattamenti per schermi più grandi */
+  .section-2 {
+    height: auto;
+    padding: 8rem 0 10rem 0; /* Spaziatura ottimizzata */
+  }
+
+  /* Contenitore per le card */
+  .cards-container {
+    flex-direction: row; /* Le card restano in formato orizzontale */
+    justify-content: space-between; /* Distribuzione uniforme delle card */
+    gap: 3rem; /* Spazio tra le card */
+    width: 85%; /* Larghezza ridotta per adattarsi meglio */
+  }
+
+  /* Adattamento per le singole card */
+  .card {
+    width: 45%; /* Le card occupano il 45% della larghezza disponibile */
+    padding: 2rem;
+    transition: transform 0.3s ease-in-out; /* Transizione al passaggio del mouse */
+  }
+
+  /* Modifica dell'immagine nelle card */
+  .card-img {
+    width: 100%;
+    height: 250px; /* Altezza modificata per un miglior adattamento */
+  }
+
+  .card-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  /* Modifica della descrizione e del prezzo nelle card */
+  .card-name-right p {
+    font-size: 1.6rem; /* Regola la dimensione del testo */
+  }
+
+  .card-name-right span {
+    font-size: 1.8rem; /* Regola la dimensione del prezzo */
+  }
+
+  /* Modifica dei pulsanti nelle card */
+  .card-name-right button {
+    font-size: 1.4rem; /* Modifica della dimensione del testo nei pulsanti */
+    padding: 0.6rem 1rem; /* Aumento del padding del pulsante */
+  }
+
+  /* Modifiche per la sezione di destra */
+  .right-side {
+    width: 48%; /* Larghezza leggermente ridotta */
+    padding: 2rem;
+  }
+
+  /* Titolo nella sezione di destra */
+  .right-side h3 {
+    font-size: 3.5rem; /* Regola la dimensione del titolo */
+  }
+
+  /* Descrizioni e prezzo nella sezione di destra */
+  .right-side p {
+    font-size: 2.5rem;
+  }
+
+  .right-side span {
+    font-size: 2.2rem; /* Modifica della dimensione del prezzo */
+  }
+
+  /* Modifiche ai pulsanti nella sezione di destra */
+  .right-side button {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Media query per dispositivi con larghezza massima di 1000px */
+@media (max-width: 1000px) {
+  .section-4 {
+    padding: 5rem 2rem;
+    width: 100%;
+    max-width: none; /* Rimuove il limite massimo di larghezza */
+  }
+
+  .signup-form {
+    flex-direction: column; /* Modifica la disposizione del form per dispositivi stretti */
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .signup-form-input {
+    width: 80%;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+
+  .signup-form-btn {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+  }
+
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .service {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .footer-socials .social-icon {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+
+  /* Copyright */
+  .copyright {
+    font-size: 1rem;
+  }
+}
+/* Media query per dispositivi con larghezza massima di 768px */
+@media (max-width: 768px) {
+  /* Sezione 2 - Layout migliorato per mobile */
+  .section-2 {
+    height: auto; /* Impostiamo l'altezza in auto per dispositivi mobili */
+    padding: 2rem 0; /* Ridotto il padding per dispositivi mobili */
+  }
+
+  /* Contenitore delle card adattato per mobile */
+  .cards-container {
+    flex-direction: column; /* Disposizione in colonna per mobile */
+    width: 90%; /* Larghezza maggiore per mobile */
+    gap: 1.5rem; /* Spaziatura tra le card */
+  }
+
+  /* Ogni card occupa tutta la larghezza */
+  .card {
+    width: 100%;
+    max-width: 100%; /* Le card occupano tutta la larghezza disponibile */
+    margin-bottom: 1.5rem; /* Distanza inferiore più contenuta */
+  }
+
+  /* Immagine della card */
+  .card-img {
+    height: 200px; /* Altezza modificata per l'immagine mobile */
+    object-fit: cover; /* L'immagine si adatta meglio al contenitore */
+  }
+
+  /* Layout del testo nella card migliorato */
+  .card-name-right {
+    width: 100%; /* Il contenuto di testo occupa tutta la larghezza */
+    margin-top: 1rem; /* Ridotto lo spazio superiore */
+  }
+
+  /* Titolo nella card */
+  .card-name {
+    font-size: 2rem; /* Font più piccolo per mobile */
+  }
+
+  .card-name-right h3 {
+    font-size: 2rem; /* Font ridotto per mobile */
+  }
+
+  .card-name-right p {
+    font-size: 1.6rem; /* Font ridotto per il mobile */
+  }
+
+  .card-name-right span {
+    font-size: 1.8rem; /* Font ridotto per mobile */
+  }
+
+  .card-name-right button {
+    font-size: 1.2rem; /* Bottone con font più piccolo su mobile */
+    padding: 0.5rem 1rem; /* Bottone più compatto */
+  }
+
+  /* Sezione immagine e testo - miglioramenti per mobile */
+  .image-text-container {
+    display: flex;
+    flex-direction: column; /* Adattato a colonna su dispositivi mobili */
+    justify-content: center;
+    align-items: center; /* Centra il contenuto */
+    width: 100%; /* Larghezza piena per l'immagine e il testo */
+  }
+
+  /* Immagine nella sezione di layout metà schermo */
+  .image-text-container img {
+    width: 100%; /* Immagine a larghezza piena */
+    height: auto; /* Altezza automatica per mantenere le proporzioni */
+  }
+
+  /* Testo nella sezione metà schermo */
+  .image-text-container .text {
+    padding: 1.5rem; /* Spaziatura per il testo */
+    font-size: 1.6rem; /* Font migliorato per mobile */
+    text-align: center; /* Allineamento del testo al centro */
+  }
+}
+
+/* Media query per dispositivi con larghezza massima di 480px */
+@media (max-width: 480px) {
+  /* Sezione 2 - Layout migliorato per dispositivi molto piccoli */
+  .section-2 {
+    padding: 1rem 0; /* Ulteriore riduzione del padding */
+  }
+
+  /* Card e testo a larghezza piena */
+  .card, .card-name-right {
+    width: 100%; /* Le card occupano tutta la larghezza */
+    max-width: 100%;
+  }
+
+  /* Immagine della card */
+  .card-img {
+    height: 150px; /* Immagine più piccola su dispositivi molto piccoli */
+  }
+
+  /* Modifiche al layout del testo per card su dispositivi piccoli */
+  .card-name-right {
+    width: 100%; /* La card di testo occupa tutta la larghezza */
+  }
+
+  /* Font più piccoli per dispositivi molto piccoli */
+  .card-name {
+    font-size: 1.8rem; /* Font ridotto */
+  }
+
+  .card-name-right h3 {
+    font-size: 1.8rem; /* Font ridotto */
+  }
+
+  .card-name-right p {
+    font-size: 1.4rem; /* Font ridotto */
+  }
+
+  .card-name-right span {
+    font-size: 1.6rem; /* Font ridotto */
+  }
+
+  .card-name-right button {
+    font-size: 1.1rem; /* Font del bottone più piccolo */
+    padding: 0.5rem 1rem; /* Bottone più compatto */
+  }
+
+  /* Sezione immagine e testo per dispositivi piccoli */
+  .image-text-container {
+    flex-direction: column; /* Layout a colonna */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-text-container img {
+    width: 100%; /* Immagine a larghezza piena */
+    height: auto; /* Mantieni le proporzioni dell'immagine */
+  }
+
+  .image-text-container .text {
+    font-size: 1.4rem; /* Testo ridotto su dispositivi molto piccoli */
+    text-align: center; /* Testo allineato al centro */
+  }
+}
+
+
+/* Sezione Vini */
+.section- {
+  background-color: #f9f9f9;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.wines-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.wine-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wine-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+}
+
+.wine-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.wine-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.wine-description {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.wine-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-top: 1rem;
+}

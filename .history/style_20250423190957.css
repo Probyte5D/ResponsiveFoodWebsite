@@ -1,0 +1,259 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #222;
+  padding: 1rem;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #f4c10f;
+}
+
+/* Section 1 */
+.section-1 {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-1-Text {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.text-item.change {
+  color: #f4c10f;
+}
+
+/* Restaurant intro */
+.restaurant-intro {
+  background-color: #f4c10f;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Section 2 */
+.section-2 {
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+}
+
+.card, .right-side {
+  flex: 1 1 45%;
+  background: #f1f1f1;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.card-name, .card-description, .card-price {
+  margin-top: 0.75rem;
+}
+
+.card-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+  background-color: #f4c10f;
+  color: #222;
+}
+
+/* Section 3 */
+.section-3 {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gallery-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.food-img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.food-name {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.food-description {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* Section 4 - Footer */
+.section-4 {
+  background-color: #222;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.section-4-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.signup-form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.signup-form-input {
+  padding: 0.75rem;
+  border-radius: 2rem;
+  border: none;
+  flex: 1;
+}
+
+.signup-form-btn {
+  background-color: #f4c10f;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  color: #222;
+}
+
+.services-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.service {
+  flex: 1 1 45%;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: white;
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #f4c10f;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cards-container {
+    flex-direction: column;
+  }
+
+  .card, .right-side {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-form {
+    flex-direction: column;
+  }
+
+  .signup-form-btn {
+    width: 100%;
+    border-radius: 2rem;
+  }
+}

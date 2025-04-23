@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*common styles*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Montserrat", "Comfortaa";
+  font-weight: 400;
+}
+
+html{
+  font-size: 62.5%;
+}
+/*end of common styles*/
+
+/*section1*/
+
+.section-1{
+
+  width:100%;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.575)), /* Fading effect */
+  url('Images/restaurant-background-2.jpg'); /* L'immagine di sfondo */
+background-size: cover; /* L'immagine coprirà tutta la sezione */
+background-position: center; /* Centra l'immagine */
+background-attachment: fixed; /* Fissa lo sfondo mentre si scorre */
+  height: 100vh;  /* Imposta l'altezza della sezione per coprire tutta la finestra */
+  color: white;  /* Colore del testo per garantire il contrasto con l'immagine */
+  padding: 2rem;  /* Padding per evitare che il contenuto tocchi il bordo */
+  border: 10px solid white;  /* Aggiungi il bordo bianco */
+  box-sizing: border-box;  /* Include il bordo nel calcolo della larghezza/altezza */
+  border-radius: 10px;  /* Opzionale: aggiungi angoli arrotondati */
+
+}
+
+.section-heading{
+  font-size: 12rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+
+.section-1-Icons i
+{
+  font-size: 35rem;
+  color:#9e6f09c5;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0); /*nascosta*/
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: transform 0.3s;
+}
+
+.section-1-Icons i.change
+{
+  transform: translate(-50%, -50%) scale(1);/*visibile*/
+  transition: transform 0.3s 0.3s;
+}
+/*end of sect1*/
+
+
+/*sect2*/
+
+.section-2 {
+  width: 100%;
+  height: 100vw;
+  background-color: #222;
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.575)), /* Fading effect */
+  url('Images/restaurant-background.jpg'); /* L'immagine di sfondo */
+background-size: cover; /* L'immagine coprirà tutta la sezione */
+background-position: center; /* Centra l'immagine */
+background-attachment: fixed; /* Fissa lo sfondo mentre si scorre */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rem 0;
+}
+
+.cards-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card{
+  position: relative;
+  width: 30rem;
+  background-color:rgba(255, 223, 0, 0.7); /* Dorato più soft */
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1rem 1rem 1rem #000;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover{
+
+  transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+  box-shadow: 2rem 2rem 2rem #000;
+  background-color: rgba(255, 215, 0, 0.85); /* Dorato più pieno durante l'hover */
+}
+
+.card::before {
+  content: "";
+  height: 100%;
+  width: 1rem;
+  background-color: rgb(139, 139, 98);
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  transform: skewY(45deg);
+  transform-origin: right;
+  box-shadow: -.1rem -.1rem -.1rem #000;
+}
+
+.card::after {
+  content: "";
+  height: 1rem;
+  width: 100%;
+  background-color: rgba(255, 223, 0, 0.7); /* Dorato più soft */
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  box-shadow: -.1rem -.1rem -.1rem #000;
+  
+
+
+}
+
+.card-img {
+  width: 100%;               /* L'immagine occuperà tutta la larghezza disponibile */
+  height: 200px;             /* Impostiamo un'altezza fissa per tutte le immagini */
+  object-fit: contain;       /* L'immagine verrà ridimensionata senza distorsioni */
+  object-position: center;   /* Centra l'immagine nel contenitore */
+}
+/*end of sect2*/
+
+.card-name{
+  font-size: 3rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: #111; /* Colore del testo scuro per contrasto */
+  margin:2rem 0;
+  text-shadow: 0.15rem 0.154rem 0.15rem #000;
+  font-display: center;
+ 
+}
+
+.card-btn{
+width:70%;
+background-color: #000;
+color: antiquewhite;
+border-radius: 5rem;
+font-size: 1.5rem;
+font-weight: 800;
+letter-spacing: 0.2rem;
+text-transform: capitalize;
+border: none;
+padding: 0.5rem 0;
+cursor: pointer;
+box-shadow: -.2rem -.2rem  -.2rem #000 ;
+}
+
+
+.card-description{
+  font-size: 2rem;
+  color: #313127;
+  font-weight: bolder; 
+  margin:2rem 2rem;
+  letter-spacing: 0.2rem;
+  padding-top: 0.5rem;
+  text-shadow: 0.15rem 0.154rem 0.15rem #999986;
+  margin-top: 0.5rem ;
+  padding-bottom: 0.5rem;
+}
+.card-price{
+  font-size: 2rem;
+  color: #070706;
+  position: bottom;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+}
+
+
+/*sect3*/
+.section-3{
+
+  background-color: #f7f7f7;
+  padding: 5rem 0;
+
+}
+
+.gallery{
+  display: flex;  
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10rem;
+
+}
+.food-img {
+  width: 24vw;
+  height: 15vw;
+  object-fit: cover;
+  box-shadow: 
+    0.3rem 0.3rem 0.2rem rgba(255, 0, 0, 0.4),    /* Rosso morbido */
+    0.6rem 0.6rem 0.3rem rgba(255, 204, 0, 0.3),  /* Giallo tenue */
+    0.9rem 0.9rem 0.3rem rgba(255, 94, 8, 0.3),   /* Arancione tenue */
+    1.2rem 1.2rem 0.4rem rgba(102, 243, 8, 0.3);  /* Verde chiaro */
+  transition: all 0.5s;
+}
+
+/*end sect3*/
+
+.gallery-link {
+  margin: 4rem 1rem;
+  position: relative;
+}
+
+.gallery-link::before {
+  content: "";
+  position: absolute;
+  width: 0.2rem;
+  height: 0;
+  background-color: white;
+  top: 2vw;
+  left: 80%;
+  transition: height 0.5s;
+  z-index: 10;
+}
+
+.gallery-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.2rem;
+  background-color: white;
+  top: 30%;
+  left: 2rem;
+  transition: width 0.5s;
+}
+
+.gallery-link:hover::before {
+  height: 80%;
+}
+
+.gallery-link:hover::after {
+  width: 90%;
+}
+
+.food-name {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+.food-description {
+  position: absolute;
+  bottom: 3vw;
+  left: 2rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  width: 70%;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-link:hover .food-name {
+  width: 100%;
+  transition: width 1.5s 0.5s;
+}
+
+.gallery-link:hover .food-description {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s 1s;
+}
+
+.gallery-link:hover .food-img {
+  box-shadow: 
+    1rem 1rem 0.2rem rgba(255, 0, 0, 0.5),    /* Rosso più sfumato */
+    2rem 2rem 0.3rem rgba(255, 204, 0, 0.4),  /* Giallo più chiaro */
+    3rem 3rem 0.4rem rgba(255, 94, 8, 0.4),   /* Arancione sfumato */
+    4rem 4rem 0.5rem rgba(102, 243, 8, 0.4);  /* Verde più tenue */
+  filter: blur(0.5rem);
+  transform: scale(1.1);
+}
+
+
+
+
+/*sect4*/
+
+.section-4{
+  width: 100%;
+  height: 55vh;
+  background-color: #b47b0075;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 3rem 0;
+  position: relative;
+  border: solid #000;
+  border-radius: 4rem;
+  
+
+}
+
+.copyright{
+  position: absolute;
+  bottom: 3rem;
+  font-size: 1.7rem;
+  font-weight: 200;
+  color: #0e0d0d;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  border-top: solid #888 0.1rem;
+  padding-top: 3rem;
+
+}
+
+.section-4-text{
+  text-transform: uppercase;
+}
+
+.section-4-heading{
+  font-size: 4rem;
+  font-weight: 900;
+  color: red;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  justify-content: center;  /* Centra gli elementi verticalmente */
+  align-items: center;  /* Centra gli elementi orizzontalmente */
+}
+
+
+.section-4-services{
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: red;
+  padding-bottom: 1rem;
+}
+
+.footer-socials i{
+
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+justify-content: space-around;
+padding-left: 2rem;
+}
+
+.footer-socials i:hover{
+
+  color: red;
+  transition: 0.5s;
+}
+.section-4-paragraph{
+  font-size: 1.5rem;
+  color: red;
+}
+.signup-form{
+  display: flex;
+  align-items: center;
+  
+
+  
+}
+
+.signup-form-input{
+  width: 35rem;
+  height: 5rem;
+  padding: 1rem;
+  border: 0.2rem solid rgb(255, 8, 0);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: red;
+  flex-direction: column;
+  margin-top: 5rem;
+
+}
+
+.signup-form-input::placeholder{
+  color:rgba(255, 0, 0, 0.4);
+  font-size: 1.3rem;
+}
+
+.signup-form-btn{
+  position: relative;
+  left: -4.5rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: #313127;
+  color: red;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  margin-top: 5rem;
+}
+
+.service{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-shadow: #000;
+}
+
+.service i{
+  font-size: 1.5rem;
+  color: red;
+}
+/*end of sect4*/
+
+
+/*nav*/
+
+/* NAVBAR HIDDEN STATE (inizialmente nascosta) */
+.navbar {
+  position: fixed;
+
+  left: 0;
+  width: 100%;
+  height: 14rem;
+  background-color: rgba(44, 42, 42, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 9999;  /* più alto di tutto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+    transition: top 0.3s ease;
+    top: 0;
+ 
+    opacity: 1;
+    pointer-events: all;
+    transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  box-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: top 0.5s ease-in-out;
+}
+
+
+
+.navbar.hidden {
+  top: -120px;
+  opacity: 0;
+  pointer-events: none;
+          /* Nasconde tutto completamente */
+  transform: translateY(-100%); /* La navbar esce completamente verso l'alto */
+  opacity: 0;                   /* La navbar diventa completamente invisibile */
+  visibility: hidden;           /* Nasconde la navbar completamente */
+  pointer-events: none;  
+}
+
+/* NAVBAR VISIBLE STATE */
+.navbar.active {
+  top: 0;
+}
+
+.navbar .nav-content {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.nav-content {
+  opacity: 0;
+}
+/* NAV LINKS */
+.navbar-link {
+  color: #999986;
+  margin: 1rem;
+  font-weight: 900;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #ffcc00;
+}
+
+/* OPTIONAL - SPAN PICCOLO SOTTO OGNI LINK */
+.navbar-link span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  margin-top: 0.5rem;
+  color: #ccc;
+}
+
+
+
+
+/*end of nav*/
+
+
+@media (max-width:1400px) {
+  html{
+    font-size: 50%;
+  }
+  
+  .section-2{
+    height: auto;
+    padding: 10rem 0 12rem 0;
+  }
+}
