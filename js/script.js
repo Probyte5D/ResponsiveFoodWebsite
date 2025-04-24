@@ -1,9 +1,9 @@
 // Sezione per la gestione del cambio dello sfondo nella prima sezione
 const backgrounds = [
-  "url('./images/restaurant-background-2.png')",
-  "url('./images/immagine2.png')",
-  "url('./images/immagine.png')",
-  "url('./images/immagine3.png')"
+  "url('../images/restaurant-background-2.png')",
+  "url('../images/immagine2.png')",
+  "url('../images/immagine.png')",
+  "url('../images/immagine3.png')"
 ];
 
 let backgroundIndex = 0;
