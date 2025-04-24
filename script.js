@@ -1,3 +1,4 @@
+// Sezione per la gestione dello sfondo della prima sezione
 const backgrounds = [
   "url('./images/restaurant-background-2.png')",
   "url('./images/immagine2.png')",
@@ -8,6 +9,7 @@ const backgrounds = [
 let backgroundIndex = 0;
 const section = document.querySelector('.section-1');
 
+// Cambia l'immagine di sfondo ogni 4 secondi
 setInterval(() => {
   section.style.backgroundImage = `
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.575)),
@@ -18,11 +20,11 @@ setInterval(() => {
 }, 4000);
 
 
-
-
+// Sezione per la gestione del cambio dei testi nella prima sezione
 const texts = document.querySelectorAll('.section-1-Text .text-item'); // Seleziona tutti i testi
 let i = 0; // Variabile per tracciare l'indice della parola corrente
 
+// Cambia il testo visibile ogni 4 secondi
 setInterval(() => {
   const currentText = document.querySelector('.section-1-Text .text-item.change'); // Seleziona il testo con la classe 'change'
 
@@ -41,22 +43,21 @@ setInterval(() => {
 }, 4000); // Cambia il testo ogni 4 secondi
 
 
+// Sezione per nascondere e mostrare la navbar durante lo scroll
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
 
-  let lastScroll = 0;
-  const navbar = document.querySelector('.navbar');
+// Rileva il movimento dello scroll per nascondere o mostrare la navbar
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
 
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
+  if (currentScroll > lastScroll) {
+    // Scroll verso il basso → nascondi la navbar
+    navbar.style.top = "-100px";
+  } else {
+    // Scroll verso l'alto → mostra la navbar
+    navbar.style.top = "0";
+  }
 
-    if (currentScroll > lastScroll) {
-      // Scroll verso il basso → nascondi
-      navbar.style.top = "-100px";
-    } else {
-      // Scroll verso l'alto → mostra
-      navbar.style.top = "0";
-    }
-
-    lastScroll = currentScroll;
-  });
-
-
+  lastScroll = currentScroll;
+});
