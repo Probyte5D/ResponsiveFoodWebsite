@@ -1,1 +1,0 @@
-const icons = document.querySelectorAll('.section1-icons i')
